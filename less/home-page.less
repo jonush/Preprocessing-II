@@ -1,25 +1,71 @@
-.home {
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
 
+  .banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .intro {
+    margin-top: 3%;
+    border-bottom: 2px dashed grey;
+  }
+
+  @media @mobile {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+}
+
+hr {
+  border: dashed 2px @navigation-border;
+}
+
+.home {
   .content-section {
     margin: 30px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-
-   
     
     .text-content {
       width: 48%;
       padding-right: 1%;
+
+      @media @mobile {
+        width: 100%;
+      }
     }
 
     .img-content {
       width: 48%;
       padding-left: 1%;
 
+      @media @mobile {
+        width: 100%;
+        padding: 0;
+
+        img {
+          width: 100%;
+        }
+      }
+
       img {
         border-radius: 10px;
       }
+    }
+
+    @media @mobile {
+      padding-left: 2%;
+      padding-right: 2%;
+      flex-direction: column;
     }
   }
 
@@ -30,11 +76,19 @@
     .text-content {
       padding-left: 1%;
       padding-right: 0;
+
+      @media @mobile {
+        padding-left: 0;
+      }
     }
 
     .img-content {
       padding-right: 1%;
       padding-left: 0;
+    }
+
+    @media @mobile {
+      flex-direction: column-reverse;
     }
   }
 
@@ -44,6 +98,11 @@
 
     img {
       border-radius: 10px;
+    }
+
+    @media @mobile {
+      width: 100%;
+      padding: 1%;
     }
   }
 
@@ -56,6 +115,79 @@
     .destination {
       width: 30%;
       margin-bottom: 30px;
+
+      @media @mobile {
+        width: 70%;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 85%;
+      height: 45px;
+      border-radius: 15px;
+      .button(teal, #ffffff, 2.3rem);
+
+      @media @mobile {
+        .button(rgb(30, 162, 185),#ffffff, 2rem);
+      }
+    }
+
+    @media @mobile {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
   }
 }// home
+
+#forms {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 800px;
+    object-fit: cover;
+    height: 200px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  form {
+    padding: 2% 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    input {
+      padding: 5% 0;
+      border-radius: 5px;
+
+      &:focus {
+        border: 2px solid teal;
+      }
+    }
+
+    label {
+      padding: 5% 0;
+      font-size: 1.6rem;
+    }
+
+    #submit {
+      width: 100%;
+      margin-top: 10%;
+      .button(teal, #ffffff, 1.5rem);
+    }
+  }
+    
+}
